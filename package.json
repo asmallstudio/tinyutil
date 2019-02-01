@@ -1,0 +1,22 @@
+{
+  "name": "@asmallstudio/tinyutil",
+  "version": "0.1.0",
+  "description": "a small studio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asmallstudio/tinyutil.git"
+  },
+  "keywords": [
+    "utility"
+  ],
+  "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asmallstudio/tinyutil/issues"
+  },
+  "homepage": "https://github.com/asmallstudio/tinyutil#readme"
+}
