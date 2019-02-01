@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/asmallstudio/tinyutil/issues"
   },
-  "homepage": "https://github.com/asmallstudio/tinyutil#readme"
+  "homepage": "https://github.com/asmallstudio/tinyutil#readme",
+  "devDependencies": {
+    "lerna": "^3.10.7"
+  }
 }
