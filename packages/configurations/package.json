@@ -1,0 +1,11 @@
+{
+  "name": "@asmallstudio/configurations",
+  "version": "0.1.0",
+  "description": "a small studio configurations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
+  "license": "MIT"
+}
