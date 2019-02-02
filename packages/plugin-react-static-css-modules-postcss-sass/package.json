@@ -2,7 +2,7 @@
   "name": "@asmallstudio/plugin-react-static-css-modules-postcss-sass",
   "description": "a small studio react static plugin for CSS Module and Sass support",
   "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
-  "version": "0.1.0",
+  "version": "0.0.9",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
