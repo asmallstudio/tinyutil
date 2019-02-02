@@ -1,19 +1,21 @@
 {
   "name": "@asmallstudio/utilities",
-  "private": false,
-  "version": "0.2.2",
   "description": "a small studio utilities",
+  "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
+  "version": "0.2.2",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
-  "license": "MIT",
   "dependencies": {
     "gray-matter": "^4.0.2",
     "js-yaml": "^3.12.1",
     "klaw": "^3.0.0",
     "react-static": "^6.3.4"
   },
-  "gitHead": "7d2ecac5c40ff009df95f296d74a3d943749aec3"
+  "gitHead": "2eea3247ca67e2a677fb830db0d049c03fa8c815"
 }
