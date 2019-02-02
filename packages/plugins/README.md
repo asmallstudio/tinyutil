@@ -4,4 +4,4 @@
 
 ## Installation
 
-`npm install @asmallstudio/plugins`
+`yarn add @asmallstudio/plugins`
