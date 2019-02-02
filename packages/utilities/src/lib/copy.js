@@ -111,7 +111,7 @@ const createSlugFromTitle = data => {
   return sanitizeString(data.title);
 };
 
-module.exports = {
+export {
   phoneNumberUnformat,
   pickFirstAvailableString,
   getFullPageTitle,

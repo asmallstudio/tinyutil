@@ -7,8 +7,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "babel src --out-dir dist",
+    "watch": "babel src --out-dir dist -w",
+    "preversion": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -16,6 +19,12 @@
     "js-yaml": "^3.12.1",
     "klaw": "^3.0.0",
     "react-static": "^6.3.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/preset-react": "^7.0.0"
   },
   "gitHead": "2eea3247ca67e2a677fb830db0d049c03fa8c815"
 }

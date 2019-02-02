@@ -30,4 +30,4 @@ const withSiteAndRouteData = compose(
   withRouteData
 );
 
-module.exports = { withSiteAndRouteData };
+export { withSiteAndRouteData };
