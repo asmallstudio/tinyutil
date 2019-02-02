@@ -1,4 +1,4 @@
-const { withSiteData, withRouteData } = require("react-static");
+import { withSiteData, withRouteData } from "react-static";
 
 /**
  * Composes single-argument functions from right to left. The rightmost
