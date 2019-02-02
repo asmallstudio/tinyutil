@@ -6,6 +6,7 @@
   "description": "a small studio JS utilities, React components",
   "main": "index.js",
   "scripts": {
+    "build-packages": "NODE_ENV=production lerna exec --parallel -- babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
