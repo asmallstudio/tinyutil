@@ -1,0 +1,80 @@
+@objects
+  div-row           #layout-row
+  div-test-a        #layout-test-a
+  div-row-b         #layout-row-b
+  div-test-b        #layout-test-b
+  div-row-c         #layout-row-c
+  div-test-c        #layout-test-c
+  div-row-d         #layout-row-d
+  h3-test-d         #layout-test-d
+
+= Layout =
+
+  @on all
+    div-test-b:
+      width ~8.3% of div-row/width
+
+  @on smallMobile
+    div-test-a:
+      width ~100% of div-row/width
+    
+    div-test-b:
+      inside div-row-b ~8.3% of div-row-b/width left
+
+    div-test-c:
+      absent
+
+    h3-test-d:
+      css color is "rgba(255, 0, 0, 1)"
+
+  @on mobile
+    div-test-a:
+      width ~75% of div-row/width
+
+    div-test-b:
+      inside div-row-b ~16.67% of div-row-b/width left
+
+    div-test-c:
+      absent
+
+    h3-test-d:
+      css color is "rgba(255, 255, 255, 1)"
+
+  @on smallTablet
+    div-test-a:
+      width ~58.3% of div-row/width
+    
+    div-test-b:
+      inside div-row-b ~25% of div-row-b/width left
+
+    div-test-c:
+      visible
+
+    h3-test-d:
+      css color is "rgba(0, 128, 0, 1)"
+
+  @on tablet
+    div-test-a:
+      width ~50% of div-row/width
+
+    div-test-b:
+      inside div-row-b ~33.3% of div-row-b/width left
+
+    div-test-c:
+      absent
+
+    h3-test-d:
+      css color is "rgba(255, 192, 203, 1)"
+
+  @on desktop
+    div-test-a:
+      width ~25% of div-row/width
+
+    div-test-b:
+      inside div-row-b ~41.67% of div-row-b/width left
+
+    div-test-c:
+      absent
+
+    h3-test-d:
+      css color is "rgba(0, 128, 0, 1)"
