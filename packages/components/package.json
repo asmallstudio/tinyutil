@@ -1,13 +1,15 @@
 {
   "name": "@asmallstudio/components",
-  "private": false,
-  "version": "0.1.3",
   "description": "a small studio components",
+  "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
+  "version": "0.1.3",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
-  "license": "MIT",
-  "gitHead": "7d2ecac5c40ff009df95f296d74a3d943749aec3"
+  "gitHead": "2eea3247ca67e2a677fb830db0d049c03fa8c815"
 }
