@@ -1,5 +1,5 @@
-import copy from "./lib/hoc";
-import fileLoading from "./lib/hoc";
-import hoc from "./lib/hoc";
+const copy = require("./lib/copy.js");
+const fileLoading = require("./lib/fileLoading.js");
+const hoc = require("./lib/hoc.js");
 
-export { copy, fileLoading, hoc };
+module.exports = { copy, fileLoading, hoc };

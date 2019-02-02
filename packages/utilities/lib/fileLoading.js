@@ -1,8 +1,8 @@
-import fs from "fs";
-import matter from "gray-matter";
-import yaml from "js-yaml";
-import klaw from "klaw";
-import path from "path";
+const fs = require("fs");
+const matter = require("gray-matter");
+const yaml = require("js-yaml");
+const klaw = require("klaw");
+const path = require("path");
 
 /**
  * Parses the information of a markdown file with front matter
@@ -214,7 +214,7 @@ const createSlugsForArray = (dataArray, createSlug) => {
   });
 };
 
-export {
+module.exports = {
   getSingleFileMd,
   getSingleFileYaml,
   getFolderCollection,

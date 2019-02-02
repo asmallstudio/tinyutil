@@ -1,4 +1,4 @@
-import { withSiteData, withRouteData } from "react-static";
+const { withSiteData, withRouteData } = require("react-static");
 
 /**
  * Composes single-argument functions from right to left. The rightmost
@@ -30,4 +30,4 @@ const withSiteAndRouteData = compose(
   withRouteData
 );
 
-export { withSiteAndRouteData };
+module.exports = { withSiteAndRouteData };
