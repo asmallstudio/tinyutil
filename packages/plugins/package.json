@@ -1,5 +1,6 @@
 {
   "name": "@asmallstudio/plugins",
+  "private": false,
   "version": "0.1.1",
   "description": "a small studio plugins",
   "main": "index.js",
@@ -7,5 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "33df72c857e831277ac7321d0ac92c97a5dce856"
 }
