@@ -2,7 +2,7 @@
   "name": "@asmallstudio/components",
   "description": "a small studio components",
   "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
