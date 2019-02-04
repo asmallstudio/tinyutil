@@ -1,4 +1,20 @@
 {
-  "presets": ["@babel/preset-env"],
+  "extends": "../../babel.config.js",
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current",
+          "browsers": [
+            "> 1% in US",
+            "last 4 versions",
+            "Firefox ESR",
+            "not IE < 10"
+          ]
+        }
+      }
+    ]
+  ],
   "plugins": [["@babel/transform-runtime"]]
 }

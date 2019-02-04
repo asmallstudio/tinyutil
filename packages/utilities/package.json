@@ -7,9 +7,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
   "scripts": {
-    "build": "babel src --out-dir dist",
+    "build": "rollup --config",
     "watch": "babel src --out-dir dist -w",
     "preversion": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,7 +26,9 @@
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.2.2",
     "@babel/plugin-transform-runtime": "^7.2.0",
-    "@babel/preset-env": "^7.1.5"
+    "@babel/preset-env": "^7.1.5",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2"
   },
   "gitHead": "2eea3247ca67e2a677fb830db0d049c03fa8c815"
 }

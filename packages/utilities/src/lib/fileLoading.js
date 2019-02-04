@@ -214,7 +214,7 @@ const createSlugsForArray = (dataArray, createSlug) => {
   });
 };
 
-export {
+export default {
   getSingleFileMd,
   getSingleFileYaml,
   getFolderCollection,
