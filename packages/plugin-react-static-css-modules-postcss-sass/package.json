@@ -7,21 +7,22 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/node.api.js",
+  "main": "node.api.js",
   "scripts": {
-    "build": "babel src --out-dir dist",
-    "watch": "babel src --out-dir dist -w",
+    "build": "babel src --out-dir .",
+    "watch": "babel src --out-dir . -w",
     "preversion": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@babel/runtime": "^7.3.1",
     "extract-css-chunks-webpack-plugin": "^3.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.1.5",
-    "@babel/preset-react": "^7.0.0"
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.1.5"
   },
   "gitHead": "2eea3247ca67e2a677fb830db0d049c03fa8c815"
 }
