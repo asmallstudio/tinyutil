@@ -2,6 +2,7 @@
   "name": "@asmallstudio/configurations",
   "description": "a small studio configurations",
   "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
+  "repository": "https://github.com/asmallstudio/tinyutil/tree/master/packages/configurations",
   "version": "0.1.4",
   "license": "MIT",
   "publishConfig": {

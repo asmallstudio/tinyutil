@@ -2,6 +2,7 @@
   "name": "@asmallstudio/utilities",
   "description": "a small studio utilities",
   "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
+  "repository": "https://github.com/asmallstudio/tinyutil/tree/master/packages/utilities",
   "version": "0.3.3",
   "license": "MIT",
   "publishConfig": {
