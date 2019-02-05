@@ -8,9 +8,27 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "index.js",
+  "module": "index.js",
+  "main": "index.cjs.js",
   "scripts": {
+    "build": "rollup --config",
+    "watch": "rollup --config --watch",
+    "preversion": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "gitHead": "2eea3247ca67e2a677fb830db0d049c03fa8c815"
+  "gitHead": "2eea3247ca67e2a677fb830db0d049c03fa8c815",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.3.1",
+    "@reach/router": "^1.2.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0"
+  }
 }
