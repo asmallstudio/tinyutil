@@ -4,4 +4,14 @@ Utility functions for a small studio websites.
 
 ## Installation
 
-`npm install @asmallstudio/utilities`
+```sh
+npm install @asmallstudio/utilities
+```
+
+## Testing
+
+To run the mocha tests:
+
+```sh
+yarn test
+```
