@@ -4,4 +4,20 @@
 
 ## Installation
 
-`npm install @asmallstudio/components`
+```shell
+$ npm install @asmallstudio/components
+```
+
+## Usage
+
+```javascript
+import { ComponentName } from "@asmallstudio/components";
+```
+
+## Component Listing
+
+- AmbiLink
+- DesignGuide
+- Icon
+- LayoutGuide
+- ReactMarkdownLink
