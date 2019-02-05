@@ -27,14 +27,15 @@ const pickFirstAvailableString = (...stringArgs) =>
  * @returns Full page title
  */
 const getFullPageTitle = (pageTitle, siteTitle) =>
-  `${pageTitle} | ${siteTitle}`;
+  `${pageTitle.trim()} | ${siteTitle.trim()}`;
 
 /**
  * Create complete page title
- * @param {string} title Page title
+ * @param {string} itemUrl Partial page url
+ * @param {string} siteUrl Site base url
  * @returns Full page title
  */
-const getAbsoluteUrl = (itemUrl, siteURL) => `${siteURL}${itemUrl}`;
+const getAbsoluteUrl = (itemUrl, siteUrl) => `${siteUrl}${itemUrl}`;
 
 /**
  * Create a relative (e.g. 3 days ago) date string from current and previous date
