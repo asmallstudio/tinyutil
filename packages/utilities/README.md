@@ -4,4 +4,6 @@ Utility functions for a small studio websites.
 
 ## Installation
 
-`npm install @asmallstudio/utilities`
+```shell
+$ npm install @asmallstudio/utilities
+```
