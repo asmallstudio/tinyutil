@@ -11,6 +11,7 @@ import path from "path";
  * @returns {Promise} Resolves to an object with the markdown file's parsed information
  */
 const getSingleFileMd = path => {
+  // console.log("getSingleFileMd:", path);
   return new Promise(resolve => {
     if (fs.existsSync(path)) {
       const rawData = fs.readFileSync(path, "utf8");
@@ -32,7 +33,9 @@ const getSingleFileMd = path => {
  * @returns {Promise} Resolves to an object with the YAML file's parsed information
  */
 const getSingleFileYaml = path => {
+  // console.log("getSingleFileYaml:", path);
   return new Promise(resolve => {
+    // console.log(yaml.safeLoad(fs.readFileSync(path, "utf8")));
     resolve(yaml.safeLoad(fs.readFileSync(path, "utf8")));
   });
 };
@@ -214,7 +217,7 @@ const createSlugsForArray = (dataArray, createSlug) => {
   });
 };
 
-export default {
+export {
   getSingleFileMd,
   getSingleFileYaml,
   getFolderCollection,

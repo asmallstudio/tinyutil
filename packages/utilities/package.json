@@ -9,25 +9,21 @@
     "access": "public"
   },
   "main": "dist/index.cjs.js",
-  "module": "dist/index.js",
+  "module": "src/index.js",
   "scripts": {
     "build": "rollup --config",
-    "watch": "babel src --out-dir dist -w",
+    "watch": "rollup --config --watch",
     "preversion": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@babel/runtime": "^7.3.1",
     "gray-matter": "^4.0.2",
     "js-yaml": "^3.12.1",
-    "klaw": "^3.0.0",
-    "react-static": "^6.3.4"
+    "klaw": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
     "@babel/core": "^7.2.2",
-    "@babel/plugin-transform-runtime": "^7.2.0",
-    "@babel/preset-env": "^7.1.5",
+    "@babel/preset-env": "^7.3.1",
     "rollup": "^1.1.2",
     "rollup-plugin-babel": "^4.3.2"
   },

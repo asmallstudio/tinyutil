@@ -10,11 +10,10 @@
             "> 1% in US",
             "last 4 versions",
             "Firefox ESR",
-            "not IE < 10"
+            "not IE < 11"
           ]
         }
       }
     ]
-  ],
-  "plugins": [["@babel/transform-runtime"]]
+  ]
 }
