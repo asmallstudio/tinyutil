@@ -3,13 +3,13 @@
   "description": "a small studio utilities",
   "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
   "repository": "https://github.com/asmallstudio/tinyutil/tree/master/packages/utilities",
-  "version": "0.3.3",
+  "version": "0.3.5",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/index.cjs.js",
   "module": "src/index.js",
+  "main": "dist/index.cjs.js",
   "scripts": {
     "build": "rollup --config",
     "watch": "rollup --config --watch",

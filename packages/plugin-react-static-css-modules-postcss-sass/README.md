@@ -6,7 +6,9 @@
 
 In an existing react-static site run:
 
-`yarn add @asmallstudio/plugin-react-static-css-modules-postcss-sass`
+```shell
+$ yarn add @asmallstudio/plugin-react-static-css-modules-postcss-sass
+```
 
 Then add the plugin to your static.config.js:
 

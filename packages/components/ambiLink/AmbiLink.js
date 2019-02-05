@@ -29,4 +29,4 @@ class AmbiLink extends React.Component {
   }
 }
 
-export default AmbiLink;
+export { AmbiLink };
