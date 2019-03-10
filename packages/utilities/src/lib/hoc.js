@@ -1,5 +1,3 @@
-import { withSiteData, withRouteData } from "react-static";
-
 /**
  * Composes single-argument functions from right to left. The rightmost
  * function can take multiple arguments as it provides the signature for
@@ -25,9 +23,4 @@ const compose = (...funcs) => {
   return funcs.reduce((a, b) => (...args) => a(b(...args)));
 };
 
-const withSiteAndRouteData = compose(
-  withSiteData,
-  withRouteData
-);
-
-export { withSiteAndRouteData };
+export { compose };
