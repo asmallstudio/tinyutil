@@ -3,7 +3,7 @@
   "description": "a small studio components",
   "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
   "repository": "https://github.com/asmallstudio/tinyutil/tree/master/packages/components",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
