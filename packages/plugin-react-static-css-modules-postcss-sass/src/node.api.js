@@ -62,18 +62,7 @@ export default ({ cssLoaderConfigOptions = {}, sassIncludePaths = [] }) => ({
     } else {
       // Prod
       config.entry = ["@babel/polyfill", ...config.entry];
-      loaders = [
-        {
-          loader: ExtractCssChunks.loader,
-          options: {
-            hot: true,
-            modules: true
-          }
-        },
-        cssLoader,
-        postcssLoader,
-        sassLoader
-      ];
+      loaders = [ExtractCssChunks.loader, cssLoader, postcssLoader, sassLoader];
     }
 
     config.module.rules[0].oneOf.unshift({
