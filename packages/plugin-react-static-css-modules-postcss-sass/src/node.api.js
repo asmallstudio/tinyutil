@@ -65,7 +65,6 @@ export default ({ cssLoaderConfigOptions = {}, sassIncludePaths = [] }) => ({
         {
           loader: ExtractCssChunks.loader,
           options: {
-            hot: true,
             modules: true
           }
         },
@@ -79,6 +78,8 @@ export default ({ cssLoaderConfigOptions = {}, sassIncludePaths = [] }) => ({
       test: /\.s(a|c)ss$/,
       use: loaders
     });
+
+    config.plugins.push(new ExtractCssChunks());
 
     return config;
   }
