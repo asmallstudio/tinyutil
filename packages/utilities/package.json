@@ -18,14 +18,14 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.2",
-    "js-yaml": "^3.12.2",
+    "js-yaml": "^3.13.1",
     "klaw": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/register": "^7.0.0",
-    "rollup": "^1.6.0",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "rollup": "^1.9.0",
     "rollup-plugin-babel": "^4.3.2"
   },
   "gitHead": "2eea3247ca67e2a677fb830db0d049c03fa8c815"
