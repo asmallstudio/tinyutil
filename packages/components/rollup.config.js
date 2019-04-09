@@ -3,7 +3,7 @@ import babel from "rollup-plugin-babel";
 const external = Object.keys(require("./package.json").dependencies);
 
 export default {
-  input: "index.js",
+  input: "src/index.js",
   external: [external],
   plugins: [
     babel({
@@ -12,7 +12,7 @@ export default {
     })
   ],
   output: {
-    file: "index.cjs.js",
+    file: "index.js",
     format: "cjs"
   }
 };
