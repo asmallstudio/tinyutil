@@ -3,7 +3,7 @@
   "description": "a small studio utilities",
   "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
   "repository": "https://github.com/asmallstudio/tinyutil/tree/master/packages/utilities",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
