@@ -89,122 +89,6 @@ const getFolderCollection = (location, extension, fileGetter, createSlug) => {
 };
 
 /**
- * Returns a hydrated object with all items with keyword hydrated
- * @param {string} data data object or array to be hydrated
- * @param {string | boolean} singleCollection
- * @param {array} requestedObjects
- * @returns {array | object} Returns an array or object, same as data, with hydrated relations.
- */
-const hydrateRelations = async (data, singleCollection, requestedObjects) => {
-  const KEYWORD = "_relation";
-
-  if (Array.isArray(data)) {
-    for (let i = 0; i < data.length; i++) {
-      data[i] = await hydrateRelations(
-        data[i],
-        singleCollection,
-        requestedObjects
-      );
-    }
-  } else if (typeof data === "object") {
-    for (const property in data) {
-      if (property === KEYWORD) {
-        // eslint-disable-next-line no-param-reassign
-        data = Object.assign(
-          {},
-          data,
-          await hydrateItem(data[property], singleCollection, requestedObjects)
-        );
-        delete data[KEYWORD]; // Remove relation getting data.
-      } else {
-        data[property] = await hydrateRelations(
-          data[property],
-          singleCollection,
-          requestedObjects
-        );
-      }
-    }
-  }
-  return data;
-};
-
-/**
- * @param {object} item
- * @param {string | boolean} singleCollection
- * @param {array} requestedObjects
- */
-const hydrateItem = async (item, singleCollection, requestedObjects) => {
-  let projectDataFileName = item.toLowerCase().replace(/ /g, "-");
-  let dataPathSuffix;
-  let urlPathPrefix;
-  let newRequestedObjects = requestedObjects;
-
-  if (singleCollection !== false) {
-    if (singleCollection === "projects") {
-      dataPathSuffix = "projects";
-      urlPathPrefix = "projects";
-    }
-    if (singleCollection === "team") {
-      dataPathSuffix = "team";
-      urlPathPrefix = "studio";
-    }
-  } else {
-    if (item.includes("/")) {
-      const fullSlugParts = projectDataFileName.split("/");
-      projectDataFileName = fullSlugParts.slice(-1)[0];
-      if (fullSlugParts[0] === "projects" || fullSlugParts[0] === "project") {
-        dataPathSuffix = "projects";
-        urlPathPrefix = "projects";
-        newRequestedObjects = ["title", "featureImage", "link"];
-      } else if (fullSlugParts[0] === "team" || fullSlugParts[0] === "studio") {
-        dataPathSuffix = "team";
-        urlPathPrefix = "studio";
-        newRequestedObjects = ["title", "jobTitle", "image", "link"];
-      }
-    }
-  }
-
-  return await getRelationData(
-    projectDataFileName,
-    dataPathSuffix,
-    urlPathPrefix,
-    newRequestedObjects
-  );
-};
-
-/**
- *
- * @param {*} item
- * @param {*} dataIsObject
- * @param {*} hydrateObjectKey
- * @param {*} dataPathSuffix
- * @param {*} urlPathPrefix
- * @param {*} requestedObjects
- * @returns {object} requested relations object data
- */
-const getRelationData = async (
-  projectDataFileName,
-  dataPathSuffix,
-  urlPathPrefix,
-  requestedObjects
-) => {
-  const singleRequestedRelationData = {};
-  const filePath = `./src/data/${dataPathSuffix}/${projectDataFileName}.yml`;
-  const relationData = await getSingleFileYaml(filePath);
-  for (const requestedObject of requestedObjects) {
-    if (requestedObject === "link") {
-      singleRequestedRelationData[
-        requestedObject
-      ] = `/${urlPathPrefix}/${projectDataFileName}`;
-    } else {
-      singleRequestedRelationData[requestedObject] =
-        relationData[requestedObject];
-    }
-  }
-  return singleRequestedRelationData;
-};
-
-/**
  * Create slugs for each element in the array
  * @param {array} dataArray Array of data objects
  * @param {function} createSlug Takes in a data object and creates a slug
@@ -221,6 +105,5 @@ export {
   getSingleFileMd,
   getSingleFileYaml,
   getFolderCollection,
-  hydrateRelations,
   createSlugsForArray
 };
