@@ -11,7 +11,11 @@ const phoneNumberUnformat = phone => phone.replace(/[^+0-9]/g, "");
  * @param {string} text A string that may be empty, meaningless, and devoid of life
  * @returns {boolean} If string has value, return true
  */
-const hasTextValue = text => text.trim().length > 0;
+const hasTextValue = text => {
+  console.log(text);
+  if (typeof text === "undefined") return false;
+  return text.trim().length > 0;
+};
 
 /**
  * Returns first string that is not valueless

@@ -22,10 +22,10 @@
     "klaw": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "@babel/register": "^7.4.4",
-    "rollup": "^1.10.1",
+    "rollup": "^1.12.5",
     "rollup-plugin-babel": "^4.3.2"
   },
   "gitHead": "2eea3247ca67e2a677fb830db0d049c03fa8c815"
