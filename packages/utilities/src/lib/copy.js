@@ -12,8 +12,8 @@ const phoneNumberUnformat = phone => phone.replace(/[^+0-9]/g, "");
  * @returns {boolean} If string has value, return true
  */
 const hasTextValue = text => {
-  console.log(text);
   if (typeof text === "undefined") return false;
+  if (text === null) return false;
   return text.trim().length > 0;
 };
 
