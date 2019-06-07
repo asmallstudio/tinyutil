@@ -3,8 +3,8 @@
 ## Package listing
 
 ```shell
-$ yarn add @asmallstudio/components
-$ yarn add @asmallstudio/configurations
-$ yarn add @asmallstudio/plugin-react-static-css-modules-postcss-sass
-$ yarn add @asmallstudio/utilities
+$ npm i -P @asmallstudio/components
+$ npm i -P @asmallstudio/configurations
+$ npm i -P @asmallstudio/plugin-react-static-css-modules-postcss-sass
+$ npm i -P @asmallstudio/utilities
 ```

@@ -13,5 +13,5 @@ npm install @asmallstudio/utilities
 To run the mocha tests:
 
 ```sh
-yarn test
+npm run test
 ```
