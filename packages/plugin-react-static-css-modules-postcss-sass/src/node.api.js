@@ -4,10 +4,6 @@ export default ({ cssLoaderConfigOptions = {}, sassIncludePaths = [] }) => ({
   webpack: (config, { stage }) => {
     let loaders = [];
 
-    const styleLoader = {
-      loader: "style-loader",
-      options: { sourceMap: true }
-    };
     const cssLoaderOptions = {
       importLoaders: 2,
       modules: true,
@@ -43,7 +39,17 @@ export default ({ cssLoaderConfigOptions = {}, sassIncludePaths = [] }) => ({
 
     if (stage === "dev") {
       // Dev
-      loaders = [styleLoader, cssLoader, postcssLoader, sassLoader];
+      loaders = [
+        {
+          loader: ExtractCssChunks.loader,
+          options: {
+            hot: true
+          }
+        },
+        cssLoader,
+        postcssLoader,
+        sassLoader
+      ];
     } else if (stage === "node") {
       // Node
       // Don't extract css to file during node build process
@@ -61,17 +67,7 @@ export default ({ cssLoaderConfigOptions = {}, sassIncludePaths = [] }) => ({
       ];
     } else {
       // Prod
-      loaders = [
-        {
-          loader: ExtractCssChunks.loader,
-          options: {
-            modules: true
-          }
-        },
-        cssLoader,
-        postcssLoader,
-        sassLoader
-      ];
+      loaders = [ExtractCssChunks.loader, cssLoader, postcssLoader, sassLoader];
     }
 
     config.module.rules[0].oneOf.unshift({
@@ -79,7 +75,7 @@ export default ({ cssLoaderConfigOptions = {}, sassIncludePaths = [] }) => ({
       use: loaders
     });
 
-    config.plugins.push(new ExtractCssChunks());
+    // config.plugins.push(new ExtractCssChunks());
 
     return config;
   }
