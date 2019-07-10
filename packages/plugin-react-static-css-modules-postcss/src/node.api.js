@@ -1,6 +1,6 @@
 import ExtractCssChunks from "extract-css-chunks-webpack-plugin";
 
-export default ({ cssLoaderConfigOptions = {}, sassIncludePaths = [] }) => ({
+export default ({ cssLoaderConfigOptions = {}, sassIncludePaths = [], loaderRegexp = /\.css$/ }) => ({
   webpack: (config, { stage }) => {
     let loaders = [];
 
@@ -62,7 +62,7 @@ export default ({ cssLoaderConfigOptions = {}, sassIncludePaths = [] }) => ({
     }
 
     config.module.rules[0].oneOf.unshift({
-      test: /\.pcss$/,
+      test: loaderRegexp,
       use: loaders
     });
 
