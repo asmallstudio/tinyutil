@@ -1,0 +1,27 @@
+{
+	"name": "@asmallstudio/plugin-react-static-css-modules-postcss",
+	"description": "a small studio react static plugin for CSS Module and PostCSS support",
+	"author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
+	"repository": "https://github.com/asmallstudio/tinyutil/tree/master/packages/plugin-react-static-css-modules-postcss",
+	"version": "0.1.0",
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"main": "node.api.js",
+	"scripts": {
+		"build": "babel src --out-dir .",
+		"watch": "babel src --out-dir . -w",
+		"preversion": "npm run build",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"extract-css-chunks-webpack-plugin": "^4.5.3",
+		"webpack": "^4.35.3"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.5.0",
+		"@babel/core": "^7.5.4",
+		"@babel/preset-env": "^7.5.4"
+	}
+}
