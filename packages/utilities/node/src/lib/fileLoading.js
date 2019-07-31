@@ -1,8 +1,78 @@
 import fs from "fs";
+import path from "path";
 import matter from "gray-matter";
 import yaml from "js-yaml";
 import klaw from "klaw";
-import path from "path";
+
+const getDirectory = async (dir, ext) => {
+  const readdirAsync = dirname => {
+    return new Promise((resolve, reject) => {
+      fs.readdir(dirname, (err, filenames) => {
+        if (err) reject(err);
+        else resolve(filenames);
+      });
+    });
+  };
+
+  const files = await readdirAsync(dir).then(filenames =>
+    filenames.filter(file => file.endsWith(ext))
+  );
+
+  return files.map((filename, index) => {
+    const fullFilepath = path.join(dir, filename);
+    const contents = fs.readFileSync(fullFilepath, "utf-8");
+
+    return {
+      contents,
+      fullFilepath,
+      filename,
+      index
+    };
+  });
+};
+
+const getYamlDirectory = async (dir, createSlugs = false) => {
+  const directorySearchExt = ".yml";
+  let directoryContents = await getDirectory(dir, directorySearchExt);
+  directoryContents.forEach(async (fileContents, i) => {
+    directoryContents[i] = yaml.safeLoad(fileContents.contents);
+    directoryContents[i].fullFilepath = fileContents.fullFilepath;
+    directoryContents[i].filename = fileContents.filename;
+  });
+
+  if (typeof createSlugs === "function") {
+    directoryContents = createSlugsForArray(
+      directoryContents,
+      createSlugs
+    );
+  }
+
+  return directoryContents;
+};
+
+const getMdDirectory = async (dir, createSlugs = false) => {
+  const directorySearchExt = ".md";
+  let directoryContents = await getDirectory(dir, directorySearchExt);
+  directoryContents.forEach(async (fileContents, i) => {
+    const matterData = matter(fileContents);
+    delete matterData.orig;
+    const fileData = matterData.data;
+    fileData.body = matterData.content;
+
+    directoryContents[i] = fileData;
+    directoryContents[i].fullFilepath = fileContents.fullFilepath;
+    directoryContents[i].filename = fileContents.filename;
+  });
+
+  if (typeof createSlugs === "function") {
+    directoryContents = createSlugsForArray(
+      directoryContents,
+      createSlugs
+    );
+  }
+
+  return directoryContents;
+};
 
 /**
  * Parses the information of a markdown file with front matter
@@ -102,6 +172,9 @@ const createSlugsForArray = (dataArray, createSlug) => {
 };
 
 export {
+  getDirectory,
+  getYamlDirectory,
+  getMdDirectory,
   getSingleFileMd,
   getSingleFileYaml,
   getFolderCollection,
