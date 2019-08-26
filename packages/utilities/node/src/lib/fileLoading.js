@@ -15,6 +15,14 @@ const ensureUniqueSlug = (slug, nameMap) => {
   return slug;
 };
 
+/**
+ * Get the contents of a folder
+ * @param {string} dir Path to folder collection
+ * @param {string} ext File extension (with or without leading `.`)
+ * @param {Promise} fileGetter Promise that returns data for a given file path
+ * @param {function} createSlug Function that creates the slug from file data
+ * @returns {array} Array of objects containing file data
+ */
 const getDirectory = async (
   dir,
   ext,
@@ -47,16 +55,20 @@ const getDirectory = async (
       if (typeof createSlug === "function")
         contents.slug = ensureUniqueSlug(createSlug(contents), nameMap);
 
-      return {
-        contents,
+      contents = Object.assign(contents, {
         fullFilepath,
         filename,
         index
-      };
+      });
+
+      return contents;
     })
   );
 };
 
+/**
+ * @deprecated since version 0.4.1
+ */
 const getYamlDirectory = async (dir, createSlugs = false) => {
   const directorySearchExt = ".yml";
   let directoryContents = await getDirectory(dir, directorySearchExt);
@@ -73,6 +85,9 @@ const getYamlDirectory = async (dir, createSlugs = false) => {
   return directoryContents;
 };
 
+/**
+ * @deprecated since version 0.4.1
+ */
 const getMdDirectory = async (dir, createSlugs = false) => {
   const directorySearchExt = ".md";
   let directoryContents = await getDirectory(dir, directorySearchExt);
@@ -132,6 +147,7 @@ const getSingleFileYaml = path => {
 
 /**
  * Get folder collection data
+ * @deprecated since version 0.4.1
  * @param {string} location Path to folder collection
  * @param {string} extension File extension (with or without leading `.`)
  * @param {Promise} fileGetter Promise that returns data for a given file path
