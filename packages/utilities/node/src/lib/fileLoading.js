@@ -4,7 +4,23 @@ import matter from "gray-matter";
 import yaml from "js-yaml";
 import klaw from "klaw";
 
-const getDirectory = async (dir, ext) => {
+const ensureUniqueSlug = (slug, nameMap) => {
+  if (nameMap[slug]) {
+    nameMap[slug] = nameMap[slug] + 1;
+    const modifiedSlug = `${slug}-${nameMap[slug]}`;
+    return modifiedSlug;
+  }
+
+  nameMap[slug] = 1;
+  return slug;
+};
+
+const getDirectory = async (
+  dir,
+  ext,
+  fileGetter = false,
+  createSlug = false
+) => {
   const readdirAsync = dirname => {
     return new Promise((resolve, reject) => {
       fs.readdir(dirname, (err, filenames) => {
@@ -18,17 +34,27 @@ const getDirectory = async (dir, ext) => {
     filenames.filter(file => file.endsWith(ext))
   );
 
-  return files.map((filename, index) => {
-    const fullFilepath = path.join(dir, filename);
-    const contents = fs.readFileSync(fullFilepath, "utf-8");
+  return await Promise.all(
+    files.map(async (filename, index) => {
+      const fullFilepath = path.join(dir, filename);
+      const nameMap = {};
 
-    return {
-      contents,
-      fullFilepath,
-      filename,
-      index
-    };
-  });
+      let contents;
+      if (typeof fileGetter === "function")
+        contents = await fileGetter(fullFilepath);
+      else contents = fs.readFileSync(fullFilepath, "utf-8");
+
+      if (typeof createSlug === "function")
+        contents.slug = ensureUniqueSlug(createSlug(contents), nameMap);
+
+      return {
+        contents,
+        fullFilepath,
+        filename,
+        index
+      };
+    })
+  );
 };
 
 const getYamlDirectory = async (dir, createSlugs = false) => {
@@ -41,10 +67,7 @@ const getYamlDirectory = async (dir, createSlugs = false) => {
   });
 
   if (typeof createSlugs === "function") {
-    directoryContents = createSlugsForArray(
-      directoryContents,
-      createSlugs
-    );
+    directoryContents = createSlugsForArray(directoryContents, createSlugs);
   }
 
   return directoryContents;
@@ -65,10 +88,7 @@ const getMdDirectory = async (dir, createSlugs = false) => {
   });
 
   if (typeof createSlugs === "function") {
-    directoryContents = createSlugsForArray(
-      directoryContents,
-      createSlugs
-    );
+    directoryContents = createSlugsForArray(directoryContents, createSlugs);
   }
 
   return directoryContents;
@@ -121,17 +141,6 @@ const getSingleFileYaml = path => {
 const getFolderCollection = (location, extension, fileGetter, createSlug) => {
   return new Promise((resolve, reject) => {
     const nameMap = {};
-
-    function ensureUniqueSlug(slug, nameMap) {
-      if (nameMap[slug]) {
-        nameMap[slug] = nameMap[slug] + 1;
-        const modifiedSlug = `${slug}-${nameMap[slug]}`;
-        return modifiedSlug;
-      }
-
-      nameMap[slug] = 1;
-      return slug;
-    }
 
     const items = [];
     if (fs.existsSync(location)) {
