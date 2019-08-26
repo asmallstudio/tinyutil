@@ -38,6 +38,15 @@ const getDirectory = async (
     });
   };
 
+  const readFileAsync = dirname => {
+    return new Promise((resolve, reject) => {
+      fs.readFile(dirname, "utf-8", (err, data) => {
+        if (err) reject(err);
+        else resolve(data);
+      });
+    });
+  };
+
   const files = await readdirAsync(dir).then(filenames =>
     filenames.filter(file => file.endsWith(ext))
   );
@@ -50,7 +59,7 @@ const getDirectory = async (
       let contents;
       if (typeof fileGetter === "function")
         contents = await fileGetter(fullFilepath);
-      else contents = fs.readFileSync(fullFilepath, "utf-8");
+      else contents = await readFileAsync(fullFilepath);
 
       if (typeof createSlug === "function")
         contents.slug = ensureUniqueSlug(createSlug(contents), nameMap);
