@@ -32,8 +32,10 @@ export default ({ cssLoaderConfigOptions = {}, sassIncludePaths = [] }) => ({
     const sassLoader = {
       loader: "sass-loader",
       options: {
-        sassIncludePaths: ["src/", ...sassIncludePaths],
-        sourceMap: true
+        sourceMap: true,
+        sassOptions: {
+          includePaths: ["src/", ...sassIncludePaths]
+        }
       }
     };
 
