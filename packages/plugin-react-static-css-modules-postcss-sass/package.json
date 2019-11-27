@@ -2,7 +2,11 @@
   "name": "@asmallstudio/plugin-react-static-css-modules-postcss-sass",
   "description": "a small studio react static plugin for CSS Module and Sass support",
   "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
-  "repository": "https://github.com/asmallstudio/tinyutil/tree/master/packages/plugin-react-static-css-modules-postcss-sass",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asmallstudio/tinyutil.git",
+    "directory": "packages/plugin-react-static-css-modules-postcss-sass"
+  },
   "version": "0.3.1",
   "license": "MIT",
   "publishConfig": {

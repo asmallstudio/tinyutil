@@ -2,7 +2,11 @@
   "name": "@asmallstudio/plugin-react-static-css-modules-postcss",
   "description": "a small studio react static plugin for CSS Module and PostCSS support",
   "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
-  "repository": "https://github.com/asmallstudio/tinyutil/tree/master/packages/plugin-react-static-css-modules-postcss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asmallstudio/tinyutil.git",
+    "directory": "packages/plugin-react-static-css-modules-postcss"
+  },
   "version": "0.1.3",
   "license": "MIT",
   "publishConfig": {
