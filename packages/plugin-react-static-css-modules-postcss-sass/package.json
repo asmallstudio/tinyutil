@@ -21,13 +21,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "extract-css-chunks-webpack-plugin": "^4.6.0",
-    "webpack": "^4.41.2"
+    "extract-css-chunks-webpack-plugin": "^4.7.1",
+    "webpack": "^4.41.5"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1"
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7"
   },
   "gitHead": "2eea3247ca67e2a677fb830db0d049c03fa8c815"
 }
