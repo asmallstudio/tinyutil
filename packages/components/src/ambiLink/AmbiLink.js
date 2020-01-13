@@ -1,32 +1,31 @@
 import React from "react";
 import { Link } from "@reach/router";
 
-class AmbiLink extends React.Component {
-  isInternal(to) {
+const AmbiLink = ({ to = "", children, ...props }) => {
+  const testIsInternal = to => {
     if (typeof to !== "string") return true;
     return (
       !to.match(/^#/) &&
       !to.match(/^[a-z]{1,10}:\/\//) &&
       !to.match(/^mailto:|^tel:/)
     );
-  }
+  };
 
-  render() {
-    const { to = "", children, ...rest } = this.props;
-    const isInternal = this.isInternal(to);
-    if (isInternal) {
-      return (
-        <Link to={to} {...rest}>
-          {children}
-        </Link>
-      );
-    }
+  const isInternal = testIsInternal(to);
+
+  if (isInternal) {
     return (
-      <a href={to} {...rest}>
+      <Link to={to} {...props}>
         {children}
-      </a>
+      </Link>
     );
   }
-}
+
+  return (
+    <a href={to} {...props}>
+      {children}
+    </a>
+  );
+};
 
 export { AmbiLink };
