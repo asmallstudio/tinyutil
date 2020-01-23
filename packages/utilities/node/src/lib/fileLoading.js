@@ -16,6 +16,27 @@ const ensureUniqueSlug = (slug, nameMap) => {
 };
 
 /**
+ * Reads the data from a filepath
+ * @param {string} filename Path to file
+ * @returns {Promise} Resolves to a string of the file's contents
+ */
+const readFileAsync = filename => {
+  return new Promise((resolve, reject) => {
+    fs.readFile(filename, "utf-8", (err, data) => {
+      if (err) reject(err);
+      else resolve(data);
+    });
+  });
+};
+
+/**
+ * Parses a given JSON file
+ * @param {string} path Path to file
+ * @returns {Promise} Resolves to an object with the JSON file's parsed information
+ */
+const getSingleFileJson = async path => JSON.parse(await readFileAsync(path));
+
+/**
  * Get the contents of a folder
  * @param {string} dir Path to folder collection
  * @param {string} ext File extension (with or without leading `.`)
@@ -34,15 +55,6 @@ const getDirectory = async (
       fs.readdir(dirname, (err, filenames) => {
         if (err) reject(err);
         else resolve(filenames);
-      });
-    });
-  };
-
-  const readFileAsync = dirname => {
-    return new Promise((resolve, reject) => {
-      fs.readFile(dirname, "utf-8", (err, data) => {
-        if (err) reject(err);
-        else resolve(data);
       });
     });
   };
@@ -125,7 +137,6 @@ const getMdDirectory = async (dir, createSlugs = false) => {
  * @returns {Promise} Resolves to an object with the markdown file's parsed information
  */
 const getSingleFileMd = path => {
-  // console.log("getSingleFileMd:", path);
   return new Promise(resolve => {
     if (fs.existsSync(path)) {
       const rawData = fs.readFileSync(path, "utf8");
@@ -147,9 +158,7 @@ const getSingleFileMd = path => {
  * @returns {Promise} Resolves to an object with the YAML file's parsed information
  */
 const getSingleFileYaml = path => {
-  // console.log("getSingleFileYaml:", path);
   return new Promise(resolve => {
-    // console.log(yaml.safeLoad(fs.readFileSync(path, "utf8")));
     resolve(yaml.safeLoad(fs.readFileSync(path, "utf8")));
   });
 };
@@ -211,6 +220,7 @@ export {
   getMdDirectory,
   getSingleFileMd,
   getSingleFileYaml,
+  getSingleFileJson,
   getFolderCollection,
   createSlugsForArray
 };

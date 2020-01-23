@@ -23,13 +23,13 @@
   },
   "gitHead": "2eea3247ca67e2a677fb830db0d049c03fa8c815",
   "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/plugin-transform-runtime": "^7.7.6",
-    "@babel/preset-env": "^7.7.7",
-    "@babel/preset-react": "^7.7.4",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "rollup": "^1.29.0",
+    "rollup": "^1.29.1",
     "rollup-plugin-babel": "^4.3.3"
   },
   "peerDependencies": {
@@ -37,7 +37,7 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@babel/runtime": "^7.7.7",
+    "@babel/runtime": "^7.8.3",
     "@reach/router": "^1.2.1",
     "prop-types": "^15.7.2"
   }
