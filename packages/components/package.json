@@ -7,7 +7,7 @@
     "url": "https://github.com/asmallstudio/tinyutil.git",
     "directory": "packages/components"
   },
-  "version": "0.1.15",
+  "version": "0.2.0",
   "license": "MIT",
   "publishConfig": {
     "access": "public",
