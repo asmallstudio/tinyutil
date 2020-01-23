@@ -21,7 +21,7 @@
     "preversion": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "gitHead": "2eea3247ca67e2a677fb830db0d049c03fa8c815",
+  "gitHead": "218981da3544a43a9edce1bc967d341b4a82e5c4",
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.8.3",
