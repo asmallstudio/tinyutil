@@ -1,33 +1,33 @@
 {
-  "name": "@asmallstudio/plugin-react-static-css-modules-postcss",
-  "description": "a small studio react static plugin for CSS Module and PostCSS support",
-  "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/asmallstudio/tinyutil.git",
-    "directory": "packages/plugin-react-static-css-modules-postcss"
-  },
-  "version": "0.1.5",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "main": "node.api.js",
-  "scripts": {
-    "build": "babel src --out-dir .",
-    "watch": "babel src --out-dir . -w",
-    "preversion": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "extract-css-chunks-webpack-plugin": "^4.7.1",
-    "webpack": "^4.41.5"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.7.7",
-    "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7"
-  },
-  "gitHead": "6e708dd5e8b3a79d6f4b7e9bf9c3338b31a155bd"
+	"name": "@asmallstudio/plugin-react-static-css-modules-postcss",
+	"description": "a small studio react static plugin for CSS Module and PostCSS support",
+	"author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/asmallstudio/tinyutil.git",
+		"directory": "packages/plugin-react-static-css-modules-postcss"
+	},
+	"version": "0.1.5",
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"main": "node.api.js",
+	"scripts": {
+		"build": "babel src --out-dir .",
+		"watch": "babel src --out-dir . -w",
+		"preversion": "npm run build",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"extract-css-chunks-webpack-plugin": "^4.7.1",
+		"webpack": "^4.41.5"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.7.7",
+		"@babel/core": "^7.7.7",
+		"@babel/preset-env": "^7.7.7"
+	},
+	"gitHead": "6e708dd5e8b3a79d6f4b7e9bf9c3338b31a155bd"
 }

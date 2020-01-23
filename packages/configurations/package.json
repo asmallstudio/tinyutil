@@ -1,21 +1,21 @@
 {
-  "name": "@asmallstudio/configurations",
-  "description": "a small studio configurations",
-  "author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/asmallstudio/tinyutil.git",
-    "directory": "packages/configurations"
-  },
-  "version": "0.1.8",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "gitHead": "6e708dd5e8b3a79d6f4b7e9bf9c3338b31a155bd"
+	"name": "@asmallstudio/configurations",
+	"description": "a small studio configurations",
+	"author": "asmallstudio <dev@asmallstudio.co> (https://asmallstudio.co)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/asmallstudio/tinyutil.git",
+		"directory": "packages/configurations"
+	},
+	"version": "0.1.8",
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"gitHead": "6e708dd5e8b3a79d6f4b7e9bf9c3338b31a155bd"
 }
