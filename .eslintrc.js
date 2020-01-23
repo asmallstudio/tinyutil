@@ -17,6 +17,7 @@ module.exports = {
   ],
   rules: {
     "react/prop-types": "off",
+    "react/react-in-jsx-scope": "error",
     "block-scoped-var": "warn",
     "guard-for-in": "error",
     "new-cap": "warn",
