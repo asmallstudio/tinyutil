@@ -7,7 +7,7 @@
 		"url": "https://github.com/asmallstudio/tinyutil.git",
 		"directory": "packages/plugin-react-static-css-modules-postcss-sass"
 	},
-	"version": "0.3.4",
+	"version": "0.3.5",
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public",
