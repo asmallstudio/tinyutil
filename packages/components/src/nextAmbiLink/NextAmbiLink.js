@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const NextAmbiLink = ({ href, as, children, ...props }) => {
+export function NextAmbiLink({ href, as, children, ...props }) {
   function isInternal(link) {
     if (typeof link !== "string") return true;
     return (
@@ -24,6 +24,4 @@ const NextAmbiLink = ({ href, as, children, ...props }) => {
       {children}
     </a>
   );
-};
-
-export { NextAmbiLink };
+}

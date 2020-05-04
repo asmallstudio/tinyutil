@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "@reach/router";
 
-const AmbiLink = ({ to = "", children, ...props }) => {
-  const testIsInternal = to => {
+export function AmbiLink({ to = "", children, ...props }) {
+  const testIsInternal = (to) => {
     if (typeof to !== "string") return true;
     return (
       !to.match(/^#/) &&
@@ -26,6 +26,4 @@ const AmbiLink = ({ to = "", children, ...props }) => {
       {children}
     </a>
   );
-};
-
-export { AmbiLink };
+}

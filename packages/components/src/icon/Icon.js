@@ -115,8 +115,8 @@ const UpCityIcon = (props = {}) => (
   </svg>
 );
 
-const Icon = ({ name, ...restProps }) => {
-  const pickIcon = name => {
+function Icon({ name, ...restProps }) {
+  const pickIcon = (name) => {
     const filteredName = name.toLowerCase();
     switch (filteredName) {
       case "dribbble":
@@ -143,10 +143,10 @@ const Icon = ({ name, ...restProps }) => {
   const Icon = pickIcon(name);
 
   return <Icon {...restProps} />;
-};
+}
 
 Icon.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
 };
 
 export { Icon };
