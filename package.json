@@ -33,5 +33,8 @@
     "lerna": "^3.21.0",
     "mocha": "^7.1.2",
     "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "@asmallstudio/components": "^0.2.7"
   }
 }
